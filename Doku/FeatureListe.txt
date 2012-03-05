@@ -1,0 +1,14 @@
+**** Wunschliste ********
+=========================
+- Weltfrieden
+- Minigraphenvorschau für Webfront ( in Überischt)
+- Aktualisieren Knopf in Webfront für aktuelle Graphen
+- automatische Webfront einbindung
+
+- Einstellbaren Erstellungszeitpunkt für die Graphen
+  Zum Beispiel ist die Aussage einer Tageshösttemperatur nur sinnvoll, wenn der Zeitbereich fest definiert ist
+- Manuell definierbare Skalierungen
+  Ich habe Graphen mit Temperatur und Luftfeuchtigkeit je Raum. Die Darstellung ist aber nicht vergleichbar,
+  da ein Graph z.B. die Temperatur von 16 bis 23°C skaliert, der nächste aber z.B. nur von 10 bis 21°C. Auch
+  mit der Luftfeuchte habe ich da so probleme - in einem Raum schwankt die Luftfeuchte z.B. nur um 1-2%, das
+  sieht grausam verzerrt aus.

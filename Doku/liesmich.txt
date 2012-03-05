@@ -1,0 +1,74 @@
+//==================================================================================
+// DUG Version.....: V1.6
+// SVN Revisionsnr:		$Revision: 40 $
+// zuletzt geändert: 	$Date: 2009-05-29 15:53:44 +0200 (Fr, 29 Mai 2009) $
+// Author:				$Author: tobias $
+//==================================================================================
+Hallo liebe Community,
+
+heute möchte ich euch das Projekt vorstellen, an dem ich die letzten 2 Wochen gearbeitet habe: Das SQLite Datenbank Und Graphen Tool, kurz DUG Tool.
+Es handelt sich dabei um eine Adaptierung des Projektes mySQLdata von einer mySQL Datenbank auf eine SQLite Datenbank.
+
+Die Vorgeschichte: 
+Vor einigen Wochen bin ich auf die IPS Version 2 umgestiegen. Da ich nun eh einige Konfigurationen und Scripte bearbeiten musste, habe ich mir gedacht, jetzt wäre doch der ideale Zeitpunkt, um meine Idee umzusetzen alle meine in IPS gesammelten Werte in einer SQL Datenbank abzuspeichern. Ein SQL Datenbank hätte den Vorteil, dass ich die Daten langzeitarchivieren könnte und jederzeit auf egel welchen Datensatz frei zugreifen könnte. 
+Glücklicherweise bin ich im IPS Forum auf das mySQLData V2 Projekt gestoßen, welches genau die Funktionalität hatte, die ich mir gewünscht habe. Ich habe das Projekt also runtergeladen und ausprobiert. Es funktionierte wirklich wunderbar und ist ein tolles Stück Software. Doch eine Sache störte mich an diesem Projekt: die Tatsache, dass ich für "ein paar" Werte extra einen mySQL Datenbank Server installieren muss. Ressourcen sind auf meinem kleinen IPS Rechner ein kostbares Gut und der mySQLDatenbank Server schluckte mir einfach zu viel. Obendrein empfand ich es als zu aufwendig, eine extra Software zu installieren. 
+Ich dachte mir, das müsste doch einfacher gehen. Und so bin ich auf SQLite Datenbanken gestoßen.
+Mit freundlicher Genehmigung von Thorsten (bruns8234) durfte ich das mySQLData Projekt als Grundlage benutzen, um mein DUG Tools daraus zu entwickeln.
+
+Was ist nun anders zum mySQLData Projekt?
+Der größte Unterchied besteht darin, dass keine mySQL Datenbank mehr benutzt wird (Server Client Architektur), sondern eine SQLite Datenbank (eine einfache Datei IST die gesamt Datenbank). Dies minimiert den Aufwand das DUG Tool zu installieren, da nur noch die passenden Treiber in PHP eingebunden werden müssen, ohne eine zusätzliche Software installieren und einrichten zu müssen.
+
+
+Was bietet mir das DUG Tool?
+Wer mySQLData kennt, kann sich in etwa vorstellen, was das DUG Tool kann. Für alle, die sich darunter nichts vorstellen können hier ein kurze Beschreibung.
+Das SQLite DUG Tool bietet die Möglichkeiten
+- IPS Variablen zu überwachen und in einer SQLite Datenbank zu speichern
+- Variablen zu editiern-> Namen ändern, eine Einheit zuweisen
+- die Anzahl der zu speichernden Datensätze zu limitieren (Nach Anzahl und/oder Zeit) -> ähnlich dem RRD von WIIPS
+- die Datensätze in Graphen / Diagrammen darzustellen -> mittels der JpGraph Bibliothek
+- Graphen beliebiger Zeitintervalle darzustellen von 1s bis mehrere Jahre
+- Graphen beliebiger Größen darzustellen
+- Graphen manuell oder automatisch in frei wählbaren Intervallen zu erstellen 
+- (beliebig) viele Variablen in einem Diagramm mit verschiedenen Farben darzustellen-> beliebig heißt, ich habs mal mit 6 Variablen getestet. Mehr sollten aber auch gehen. Das Erstellen dauert dann halt nur etwas länger. 
+
+
+Welche geplanten Features sind noch nicht fertig?
+- Benutzung anderer Datenbanktypen (mySQL, SQLite 3.0 usw.)
+
+
+Welche bekannten Bugs gibt es?
+- Leider gibt es einen "Bug" von dem ich noch nicht weiß, wie ich ihn beheben kann: Wenn man in der Graphenverwaltung einen Graphen sofort erstellen lässt, so kommt es vor, dass nicht das neu erstelle Graphendiagramm angezeigt wird, sondern ein altes im Browsercache liegendes Diagramm.
+==> Ich weiß nicht, ob das an meinen HTML Unfähigkeiten oder an meinem Browser liegt. Vielleicht hat ja jemand eine Lösung für dieses Problem.
+- Die Erstellung der Graphen kann auf älteren Rechner bei vielen Datensätzen durchaus länger dauern. 
+- Die Erstellung der Verwaltungsübersicht dauert je nach Variablenanzahl in IPS sehr lange.
+
+
+Wie installiere ich das DUG Tool?
+Das SQLite DUG Tool wurde für die IPS Version V2 geschrieben und benutzt die IPS IDs zur Identifizierung von Variablen und Scripten. Es ist unter der IPS Version 1 definitiv NICHT lauffähig!!!
+Zur Installation:
+Ladet die ZIP Datei im Anhang zu diesem Beitrag herunter. Darin enthalten sind alle nötigen Programmdateien für das DUG Tool. Entpackt das ZIP File unter Beibehaltung der Ordnerstruktur in euren Webordner. Bei mir sieht das etwa so aus:
+c:\IPSV2\webfront\.
+Dort hinein kommt das DUG Tool. Also etwa so:
+c:\IPSV2\webfront\DUGTool\
+Nun öffnet Ihr einen Browser eurer Wahl und ruft die Datei install.php im DUG Tool Ordner auf. Bei mir sieht das so aus:
+http://localhost:82/DUGTool/install.php
+Das Installationsscript zeigt euch an, ob ihr alle Vorraussetzungen zur Installation erfüllt. Wenn nicht, sagt euch das Script, was ihr machen müsst. Sind alle Vorbedingungen erfüllt, drückt einfach auf installieren. Kurz warten, und fertig.
+Es kommt eine Seite mit einer Liste alle ausgeführten Installationsschritte und einem Link zur Startseite des DUG Tools. 
+
+Das wars dann auch schon. Wollt ihr später noch einmal auf die Verwaltung zugreifen, so müsst ihr die Datei index.php aufrufen. Wieder in etwa so:
+http//localhost:82/DUGTool/index.php
+
+Für alle die etwas mehr Erfahrung in PHP haben, sei hier gesagt, dass das DUG Tool folgende Extensions benötigt:
+(für alle Unerfahrenen erklärt einem dies das Installationsscript)
+php_pdo.dll, php_sqlite.dll und php_gd2.dll
+
+
+
+Was gibt es sonst noch zu beachten?   
+Ihr solltet wissen, dass dies mein erstes größeres PHP Projekt ist. Der Code, den ich geshrieben habe, ist nicht unbedingt schön und mit Sicherheit nicht 100%ig effizient, aber er sollte funktionieren. Wenn es Probleme mit dem Tool gibt, könnt ihr mich hier über das Forum informieren.
+Und bitte nehmt zur Kenntnis, dass ich keine Haftung für mögliche Schäden an eurer Hard- oder Software, sowie für möglichen Datenverlust übernehme. Nur, weil dieses Tool bei mir funktioniert heißt das noch lange nicht, dass es bei allen Anderen auch so ist. Dafür sind die Systemkonfigurationen einfach zu unterschiedlich. Ich bemühe mich allerdings das SQLite DUG Tool möglichst vielen Benutztern zugänglich zu machen. :)
+
+
+***** Ergänzung:
+Es gibt eine ganze Menge Programme mit denen man sich SQLite DAtenbanken ansehen und bearbeiten kann. ICh persönlich benutze den SQLite Administrator unter: http://sqliteadmin.orbmu2k.de/
+Damit könnt ihr sehen, was sich in eurer Datenbank befindet und auch ein paar SQL Abfragen ausprobieren.

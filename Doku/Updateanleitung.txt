@@ -1,0 +1,10 @@
+Updateanleitung
+===============================
+1. Sicherheitskopie der eigenen Datenbank anlegen!
+2. Überprüfen, ob man wirklich die aktuelle Datenbank gesichert hat!
+3. Sicherheitskopie der Graphen- und VerwaltungsKonfigurations Dateien anlegen, falls eigene Änderungen am Design vorgenommen worden sind. -> diese Änderungen müssten dann manuell in die neuen Dateien eingearbeitet werden.
+
+4. Die neue DUG Tool Version ins DUG Tool Verzeichnis kopieren. -> Das sieht bei mir etwa so aus: c:\IPSV2\webfront\DUGTool\ 
+5. Die Datei update.php aufrufen -> Bei mir geht das so: http://localhost:82/DUGTool/update.php
+6. Einen Augenblick warten und fertig. 
+7. Das DUG Tool ist auf dem neuesten Stand.

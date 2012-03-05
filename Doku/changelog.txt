@@ -1,0 +1,92 @@
+*** SQLite DUG Tool Change Log ***
+==================================
+**** ToDo:
+- vorhandensein des Script Verzeichnisses überprüfen
+- Minigraphenvorschau für Webfront ( in Überischt)
+- Aktualisieren Knopf in Webfront für aktuelle Graphen
+- automatische Webfront einbindung
+- Dynamische HTML Seite für graphen erstellen und bearbeiten
+- Andere Datenbanken anbinden
+- Importtool für mySQLData V2
+
+*** V1.61 ** 02.10.2009
+- Bug: 60sek Graphenupdate Script wirde jetzt wieder richtig dem Grapehnupdate Script zugewiesen
+- Bug: Anzeige des "Darstellungs-" und "Neuerstellungsintervalls" in der Verwaltung funktioniert wieder ohne Fehlermeldung
+
+*** V1.6 ** 27.09.2009
+- Bug: mehrere kleine Bugfixes, um mit IPS 2.0 und höher zu funktionieren
+
+*** V1.52 ** 21.05.2009
+- Bug: Aktuelle Werte in der Legende werden nun gerundet
+- Bug: Mittelwert wird nun im Graphen richtig berechnet -> in der Legende noch nicht
+- Bug: Balkengraphen werden nun aus IPS heraus richtig erstellt -> war ein Problem mit den Pfaden zu den Filterfunktionen
+- Bug: Ausgabefehler bei Datensatz löschen korrigiert
+- Bug: "Datensatz löschen" funktioniert nun auch in der Variablenverwaltung
+- Bug: Pfadangabe zum Diagramme Ordner ist nun nicht mehr Groß-/Kleinschreibungsabhängig
+- Bug: Legende des Balkendiagramms zeigt nun richtige "aktuelle Werte" an
+
+*** V1.51 ** 17.05.2009
+- Bug: Tippfehler in beiden Konfigurationsdateien korrigiert
+
+*** V1.5 ** 17.05.2009
+- Bug: In IPS umbenannte Graphen behalten nun Ihre neue Bezeichnung, auch, wenn sie neu erstellt werden
+- hinzugefügt: neu angelegte Events werden gelöscht, wenn es Probleme mit der Zuweisung zum Script "DBupdate.php" in IPS gibt.
+- hinzugefügt: 48 Stunden Schritte für die X Achsen Beschriftung -> schöner bei 1 Monatsgraphen
+- hinzugefügt: Balkendiagramme mit den Modi -> Maximum, Minimum, Mittelwert, Summe
+- hinzugefügt: Vorschau der Variablenfarben beim Anlegen und Bearbeiten hinzugefügt
+- hinzugefügt: Darstellungsreihenfolge der Variablen im Graphen ist nun veränderbar -> Graph bearbeiten (erweitert)
+- hinzugefügt: weiter Farben für die Graphen
+- geändert: physikalische Einheiten werden im Graphen nun nicht mehr in eckigen Klammern dargestellt
+- geändert: ein Klick auf "Graphen erstellen" lässte alle Graphen neu erstellen, wenn vorher nicht ein bestimmter Graphen ausgewählt worden ist
+- geändert: Konfigurationsdateien benutzen nun echte Konstanten anstatt globale Variablen
+
+*** V1.4 ** 26.04.2009
+- Bug: Wenn ein Fehler während der Installation oder des Updates auftritt, werden keine leeren Scriptobjekte mehr in IPS zurückgelassen (nun wirklich)
+- Bug: Darstellungsfehler beim letzten "Zwischentick" der X-Achsenbeschriftung korrigiert
+- Bug: Fehler "cannot use skalar as array in graphenbasis.php" -> gemeldet von Rainer -> korrigiert (Fehler trat immer dann auf, wenn der erste Datenpunkt sekundengenau auf dem Wert 0 der XAchse lag)
+- hinzugefügt: in der Legende steht nun der aktuelle Wert der Variablen
+- hinzugefügt: bei Graphen mit mehreren verschiedenen phys. Einheiten werden nun zwei Y Skalen (link und rechts) angezeigt
+- hinzugefügt: zusätzliche  (rechte) Y Skala kann in den Einstellungen aktiviert und deaktiviert werden
+- geändert: enthält ein Graph mehr phys. Einheiten, als Y Skalen, werden die Einheiten nur noch in der Legende angezeigt
+- hinzugefügt: X Skala zeigt nun auch Zwischenschritte an -> (wenn ein Hauptschritt größer als 50 Pixel ist)
+- hinzugefügt: Datei mit allen Konstanten -> Änderungen der Grundeinstellung eines Graphen möglich; neue Linienarten und -farben anlegen;
+- hinzugefügt: Graphen können jetzt auch mit Farbe gefüllt werden
+- hinzugefügt: Konstanten für eine wichtigen Parameter des Graphendiagramms
+- hinzugefügt: Verwaltungsansicht zeigt nun für das Darstellungs- und Neuerstellungsinteravall keine Sekunden mehr an -> sofern eine Bezeichnung für die Sekundenanzahl in der konstanten.php steht
+- geändert: Änderungen an der Dateistruktur. -> graphenbasis.php und sqlitebasis.php gibt es jetzt nur noch EIN Mal im DUG Tool Verzeichnis -> dafür gibt es im IPS Script Ordner nun die Datei DUGToolbasis.php, die den Pfad zum DUG Tool Verzeichnis enthält
+- hinzugefügt: es können nun Filter auf die Werte angewendet werden -> zu erstellen in filter.php und in die Konfiguration einbinden -> individuelle Filter für jede Datenreihe kommen in Version 1.5
+
+*** V1.3 ** 15.04.2009
+- Bug: Wenn ein Fehler während der Installation oder des Updates auftritt, werden keine leeren Scriptobjekte mehr in IPS zurückgelassen
+- Bug: Fehler (es erschienen Fehlermeldungen) beim Update, wenn sich nur Float Variablen in der DB befinden, wurde korrigiert
+- hinzugefügt: Änderungen im IPS Variablenpfades können nachträglich in die DB übernommen werden -> Variable barbeiten -> IPS Namen übernehmen
+- hinzugefügt: neue Skalaeinteilung für die x-Achse -> es werden konstante Zeitschritte verwendet
+
+*** V1.2b ** 15.04.2009
+- Bug: graphenbasis im IPS Scriptordner wird nun auch geupdatet
+- geändert: SetGrace mit 10% für die y-Achse wieder raus genommen -> Graphen sahen unschön aus
+
+*** V1.2 ** 14.04.2009
+- Bug: Boolsche Variablen werden nun richtig in der DB gespeichert
+- geändert: Graphen und Variablen werden nun sortiert nach ihren Namen angezeigt
+- geändert: Variablenverwaltung gruppiert die Variablen nach Vorhandensein in der DB (am Anfang), nicht in der DB (am Ende)
+- geändert: fügt man eine Variable zur Übewachung hinzu, wird diese sofort in der DB angelegt und der aktuelle Wert gespeichert
+- geändert: Erstellungszeit und -datum werden nun über dem Graphen angezeigt -> mehr Platz für die Legende 
+- geändert: überflüssige Debugausgabe aus DBupdate.php entfernt.
+- hinzugefügt: Graphen können nun nachträglich bearbeitet werden
+- hinzugefügt: Ganzzahlige Darstellung für jede Variable aktivier-/deaktivierbar -> unter Graphen anlegen/ bearbeiten (erweitert)
+- hinzugefügt: Extra Seite für Einstellungen
+- hinzugefügt: Option die Graphen im IPS Media Ordner zu speichern -> aktivierbar unter Einstellungen
+- hinzugefügt: Ein Updatescript update.php angelegt
+- hinzugefügt: Ein Offset Wert für die automatische Graphenerzeugung kann nun angegeben werden -> Bsp.: Soll ein Graph stündlich oder täglich neu erzeugt werden, so geschieht dies direkt zum Stunden- oder Tageswechsel. Mit dem Offset kann dieser Zeitpunkt verschoben werden.
+- hinzugefügt: Datensätze können nun gelöscht werden -> Graphen, die NUR auf den zu löschenden Datensätzen basieren werden ebenfalls gelöscht.
+
+*** V1.1 ** 05.04.2009
+- Bug: DBupdate.php speichert keine Variablen in der DB -> gefixed
+- Bug: Man kann einen Graphen ohne Variablen anlegen -> Grapherstellung bricht ab -> gefixed
+- Bug: Der erste Wert in der Variablenverwaltung wird zwei mal in der Liste angezeigt -> gefixed
+- geändert: eine Variable $logall in DBupdate.php eingefügt, um die IPS Log Nachrichten auszuschalten
+
+*** V1.0 ** 04.04.2009
+- Finale Version fertig
+

@@ -1,0 +1,118 @@
+body  {  background-color:#F9F1C9;
+         text-align:center;
+         font: 12pt Arial;
+         }
+h1    {  text-align:center;
+         color:#000000;
+         font: 12pt Arial;
+         }
+
+
+h2    {  text-align:center;
+         color:#000000;
+         font: bold 12pt Arial;
+         }
+
+
+
+p,li  { font: 8pt Arial;
+        letter-spacing:0.2mm;
+        word-spacing:0.8mm;
+        color:black;
+        }
+
+table { font: 12pt Arial; border: none; 
+      }
+
+
+.hauptmenu { align:left;
+             background-color:#FF9C10;
+             font: 10pt Arial;
+             }
+
+a.hauptmenulink:link          {color: #000000; font: bold 9pt Arial; text-decoration:none}
+a.hauptmenulink:visited       {color: #000000; font: bold 9pt Arial; text-decoration:none}
+a.hauptmenulink:hover         {color: #2020FF; font: bold 9pt Arial; text-decoration:none}
+
+
+.submenu { align:left;
+           background-color:#F9EAA7;
+           font: 10pt Arial;
+           }
+
+a.submenulink:link          {color: #000000; font: bold 10pt Arial; text-decoration:none}
+a.submenulink:visited       {color: #000000; font: bold 10pt Arial; text-decoration:none}
+a.submenulink:hover         {color: #2020FF; font: bold 10pt Arial; text-decoration:none}
+
+a.ccdatalink:link          {color: #000000; font: bold 10pt Arial;}
+a.ccdatalink:visited       {color: #000000; font: bold 10pt Arial;}
+a.ccdatalink:hover         {color: #2020FF; font: bold 10pt Arial; }
+
+
+
+.tab_normal { align:center;
+              border:2px solid black;
+              background-color:#F9EAA7;
+              border-collapse:collapse;
+              empty-cells:show;
+              font: 8pt Arial;
+              text-align:left;
+              color:#000000;
+              rules:groups;
+             }
+
+.tab_headline { background-color: #ffcd24;
+                color:#000000;
+                border:2px solid black;
+                empty-cells:show;
+                font: 9pt Arial bold;
+                rules:groups;
+              }
+.tab_normal_line  { background-color:#F9EAA7;
+                    border-color:#000000;
+                    color:#000000;
+                    font: 8pt Arial;
+                    border-top:2px solid black;
+                    empty-cells:show;
+                    rules:groups;
+                    }
+.tab_secound_line  { background-color:#F9EAA7;
+                    border-color:#000000;
+                    color:#000000;
+                    font: 8pt Arial;
+                    border: none;
+                    empty-cells:show;
+                    rules:groups;
+                    }                    
+
+.tab_headfield { background-color:#ffcd24;
+                 color:#000000;
+                 empty-cells:show;
+                 font: bold 10pt Arial;
+                }
+
+
+.nav_cat {  font: 10pt Arial;
+ font-weight: bold; color: #000000; text-decoration: none; background-color:#FF9C10;}
+.nav_sub { font: 9pt Arial;
+ font-weight: normal; color: #000000; text-decoration: none; background-color:#F9EAA7}
+.nav_sub_link { font: 9pt Arial;
+ font-weight: normal; color: #000000; text-decoration: underline;}
+
+
+a.menulink:link     {color: #808080; font: bold 10pt Arial; text-decoration:none}
+a.menulink:visited  {color: #000000; font: bold 10pt Arial; text-decoration:none}
+a.menulink:hover    {color: #00008B; font: bold 10pt Arial; text-decoration:none}
+
+.menutext-s        {color: #808080; font: bold 8pt Arial; }
+.menutext-m        {color: #808080; font: bold 12pt Arial; }
+.menutext-l        {color: #808080; font: bold 16pt Arial; }
+.menutext          {color: #808080; font: Arial; }
+
+.header            {color: #FFFFFF; font: bold 12pt Arial; background-color: #F9F1C9; }
+.subheader         {color: #000000; font: bold 12pt Arial; }
+.normaltext        {color: #000000; font: 10pt Arial; }
+
+
+.standard {color: black;font: 10pt Arial}
+.small {color: black;font: 9pt Arial}

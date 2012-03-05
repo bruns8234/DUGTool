@@ -1,0 +1,24 @@
+**** ToDo: ********
+===================
+- vorhandensein des Script Verzeichnisses überprüfen
+- Dynamische HTML Seite für Graphen erstellen und bearbeiten
++ Andere Datenbanken anbinden / Thorsten
+- Importtool für mySQLData V2
+
+
+
+
+**** BUG-Tracking: *****
+========================
+LNr Datum  Modul
+  Beschreibung
+---------------------------------------------------------------------------
+001 090524 Graphenerzeugung
+  Bei fehlenden Daten im Auswertezeitraum (in DB steht min. 1 Wert, im Zeitraum ist aber kein neuer hinzugekommen)
+  wird in der Legende der Durchschnittswert des vorherigen Eintrags angezeigt. Da keine Daten vorhanden sind müsste
+  aber z.B. "-" angezeigt werden (alle Berechnungen sollten auf fehlende Daten prüfen).
+  (da muss ich nochmal nachfragen)
+
+
+
+ 
