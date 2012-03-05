@@ -1,0 +1,24 @@
+= README zu DUGTool =
+
+Mit diesem Projekt soll das DUG-Tool V1.61 mit Anpassungen von TGUSI74 auf
+ein neues Datenbank-Interface gestellt werden. Es sollen möglichst viele
+System zur Auswahl stehen, um für jeden Anwender die optimale Lösung bieten
+zu können. Dazu soll vom derzeit fest kodierten Datenbankzugriff via SQLite3
+auf ein PDO-basiertes Interface gewechselt werden, welches über eine
+einheitliche Klasse auf verschiedene PDO-Treiber (z.B. mySQL, MS-SQL, SQLite,
+Oracle, usw.) zugreifen kann.
+
+Die Arbeit soll in folgenden Phasen erfolgen:
+# Überarbeitung der gesamten Dateien, um ein einheitliches Erscheinungsbild
+zu gewährleisten:
+
+# Erstellung einer abstrakten Klasse, welche alle Methoden definiert, die vom DUG-Tool benötigt werten
+# Implementation einer mySQL und einer SQLite-Ableitung
+
+Daran anschließend sollten noch folgende Funktionen implementiert werden:
+* Eine Export- und eine Import-Funktion für die Datenbank
+* Unterstützung der GUI durch dezenten AJAX-Einsatz (z.B. Vorschau auf Graphen)
+* Evtl. noch weitere Wünsche oder Anregungen aus der Community
+
+Angedacht ist evtl. auch eine Umsetzung auf die IPS-Libraray, dazu müssen aber noch gespräche mit dem
+Verantwortlichen Entwickler aus der Community geführt werden.
